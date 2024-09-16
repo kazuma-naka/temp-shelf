@@ -1,11 +1,7 @@
-import { contextBridge } from "electron";
+import { contextBridge, ipcRenderer } from "electron";
 
 contextBridge.exposeInMainWorld("electronAPI", {
-  readFile: (file) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      console.log(reader.result);
-    };
-    reader.readAsText(file);
-  },
+  onFileAdded: (callback) => ipcRenderer.on("file-added", callback),
+  dropFile: (file) => ipcRenderer.send("file-dropped", file),
+  clearFiles: () => ipcRenderer.send("clear-files"),
 });
