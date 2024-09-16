@@ -1,6 +1,6 @@
 import { fileURLToPath } from "url";
 import path from "path";
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, screen } from "electron";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -8,20 +8,28 @@ const __dirname = path.dirname(__filename);
 let mainWindow;
 
 function createWindow() {
+  const { height } = screen.getPrimaryDisplay().workAreaSize;
+  const windowHeight = height / 2;
+  const centeredY = (height - windowHeight) / 2;
+
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 800,
+    width: 500,
+    height: windowHeight,
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
       nodeIntegration: false,
       contextIsolation: true,
     },
     autoHideMenuBar: true,
     resizable: false,
-    icon: null,
+    icon: path.join(__dirname, "img/place_item.png"),
+    alwaysOnTop: true,
+    x: 0,
+    y: centeredY,
   });
 
   mainWindow.loadFile("index.html");
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  createWindow();
+});

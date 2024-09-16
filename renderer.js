@@ -9,6 +9,7 @@ dropZone.addEventListener("dragover", (event) => {
 dropZone.addEventListener("drop", (event) => {
   event.stopPropagation();
   event.preventDefault();
+
   const files = event.dataTransfer.files;
 
   if (files.length > 0) {
