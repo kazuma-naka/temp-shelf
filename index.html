@@ -12,9 +12,14 @@
       <div class="title-bar-button" id="close">×</div>
     </div>
     <div id="drop_zone">
-      <img id="place_holder_img" src="img/place_item.png" alt="place_item" />
-      <div id="file_list">
-        <ul id="files" draggable="true"></ul>
+      <img
+        id="place_holder_img"
+        src="img/place_item.png"
+        alt="place_item"
+        draggable="false"
+      />
+      <div id="file_list" draggable="true">
+        <ul id="files"></ul>
       </div>
     </div>
     <script type="module" src="./renderer.js"></script>

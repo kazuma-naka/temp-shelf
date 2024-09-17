@@ -1,7 +1,8 @@
 import { fileURLToPath } from "url";
 import path from "path";
+import fs from "fs";
+import os from "os";
 import { app, BrowserWindow, screen, ipcMain } from "electron";
-import("./preload.js");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,6 +42,13 @@ function createWindow() {
     if (mainWindow) {
       mainWindow.minimize();
     }
+  });
+
+  ipcMain.handle("save-file-to-temp", async (_, { name, data }) => {
+    const tempDir = os.tmpdir();
+    const tempFilePath = path.join(tempDir, name);
+    await fs.promises.writeFile(tempFilePath, data);
+    return tempFilePath;
   });
 }
 
