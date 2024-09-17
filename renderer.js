@@ -1,5 +1,7 @@
 let fileList = [];
 
+const minimizeButton = document.getElementById("minimize");
+const closeButton = document.getElementById("close");
 const dropZone = document.getElementById("drop_zone");
 const filesListElement = document.getElementById("files");
 const fileListContainer = document.getElementById("file_list");
@@ -21,6 +23,26 @@ function updateFileListUI() {
     });
   }
 }
+
+minimizeButton.addEventListener("click", () => {
+  console.log("Minimize button clicked");
+  if (window.electron && window.electron.minimizeWindow) {
+    window.electron.minimizeWindow();
+    console.log("Minimize function called");
+  } else {
+    console.error("electron API not found");
+  }
+});
+
+closeButton.addEventListener("click", () => {
+  console.log("Close button clicked");
+  if (window.electron && window.electron.closeApp) {
+    window.electron.closeApp();
+    console.log("closeApp function called");
+  } else {
+    console.error("electron API not found");
+  }
+});
 
 dropZone.addEventListener("dragover", (event) => {
   event.stopPropagation();

@@ -5,6 +5,7 @@ body {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
     height: 100%;
+    overflow: hidden;
 }
 
 #drop_zone {
@@ -88,4 +89,29 @@ body {
 #drop_zone img.hidden {
     opacity: 0;
     display: none;
+}
+
+/* Title bar style */
+.title-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #333;
+  -webkit-app-region: drag; /* Title bar is draggable */
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Make buttons interactive by preventing them from being draggable */
+.title-bar-button {
+  width: 45px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  -webkit-app-region: no-drag; /* Make buttons clickable */
+}
+
+.title-bar-button:hover {
+  background-color: #555;
 }

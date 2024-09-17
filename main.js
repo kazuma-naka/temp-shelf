@@ -1,6 +1,7 @@
 import { fileURLToPath } from "url";
 import path from "path";
-import { app, BrowserWindow, screen } from "electron";
+import { app, BrowserWindow, screen, ipcMain } from "electron";
+import("./preload.js");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,11 +14,13 @@ function createWindow() {
   const centeredY = (height - windowHeight) / 2;
 
   mainWindow = new BrowserWindow({
-    width: 500,
+    width: 600,
     height: windowHeight,
     webPreferences: {
-      nodeIntegration: false,
+      preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
+      enableRemoteModule: false,
+      nodeIntegration: false,
     },
     autoHideMenuBar: true,
     resizable: false,
@@ -25,9 +28,20 @@ function createWindow() {
     alwaysOnTop: true,
     x: 0,
     y: centeredY,
+    frame: false,
   });
 
   mainWindow.loadFile("index.html");
+
+  ipcMain.on("close-app", () => {
+    app.quit();
+  });
+
+  ipcMain.on("minimize-window", () => {
+    if (mainWindow) {
+      mainWindow.minimize();
+    }
+  });
 }
 
 app.whenReady().then(() => {
