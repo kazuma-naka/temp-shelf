@@ -21,4 +21,11 @@ contextBridge.exposeInMainWorld("electron", {
       throw error;
     }
   },
+  startDrag: (files) => {
+    const fileData = files.map((file) => ({
+      name: file.name,
+      path: file.path,
+    }));
+    ipcRenderer.send("start-drag", fileData);
+  },
 });

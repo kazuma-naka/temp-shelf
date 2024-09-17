@@ -2,10 +2,27 @@ let fileList = [];
 
 const minimizeButton = document.getElementById("minimize");
 const closeButton = document.getElementById("close");
+const allFilesSelectCheckBox = document.getElementById("selectAllFilesState");
 const dropZone = document.getElementById("drop_zone");
 const filesListElement = document.getElementById("files");
 const fileListContainer = document.getElementById("file_list");
 const placeHolderImg = document.getElementById("place_holder_img");
+
+function handleListDragStart(event) {
+  event.preventDefault();
+  if (window.electron && window.electron.startDrag) {
+    window.electron.startDrag(fileList);
+  } else {
+    console.error("Electron API not found");
+  }
+  fileList = [];
+  updateFileListUI();
+}
+
+function handleListDragEnd() {
+  fileList = [];
+  updateFileListUI();
+}
 
 function handleDragStart(event, file) {
   if (file.path) {
@@ -111,6 +128,18 @@ closeButton.addEventListener("click", () => {
     console.log("closeApp function called");
   } else {
     console.error("electron API not found");
+  }
+});
+
+fileListContainer.draggable = true;
+fileListContainer.addEventListener("dragstart", handleListDragStart);
+
+allFilesSelectCheckBox.addEventListener("change", function () {
+  fileListContainer.draggable = this.checked;
+  if (this.checked) {
+    fileListContainer.addEventListener("dragstart", handleListDragStart);
+  } else {
+    fileListContainer.removeEventListener("dragstart", handleListDragStart);
   }
 });
 

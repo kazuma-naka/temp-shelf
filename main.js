@@ -50,7 +50,20 @@ function createWindow() {
     await fs.promises.writeFile(tempFilePath, data);
     return tempFilePath;
   });
-  
+
+  ipcMain.on("start-drag", (event, files) => {
+    const filePaths = files.map((file) => file.path);
+
+    // Ensure all file paths are valid
+    if (filePaths.every((filePath) => fs.existsSync(filePath))) {
+      mainWindow.webContents.startDrag({
+        files: filePaths,
+        icon: path.join(__dirname, "img", "drag-and-drop.png"), 
+      });
+    } else {
+      console.error("One or more files do not have a valid path.");
+    }
+  });
 }
 
 app.whenReady().then(() => {

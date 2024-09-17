@@ -54,7 +54,6 @@ body {
 
 #file_list.show {
     display: flex;
-    /* Make the file list visible when there are files */
     flex-direction: column;
     align-items: flex-start;
 }
@@ -85,24 +84,20 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Ensure the drop zone image is hidden when files are present */
 #drop_zone img.hidden {
     opacity: 0;
     display: none;
 }
 
-/* Title bar style */
 .title-bar {
     width: 100%;
     height: 30px;
     background-color: #333;
     -webkit-app-region: drag;
-    /* Title bar is draggable */
     display: flex;
     justify-content: flex-end;
 }
 
-/* Make buttons interactive by preventing them from being draggable */
 .title-bar-button {
     width: 45px;
     height: 30px;
@@ -111,14 +106,18 @@ body {
     line-height: 30px;
     cursor: pointer;
     -webkit-app-region: no-drag;
-    /* Make buttons clickable */
 }
 
 .title-bar-button:hover {
     background-color: #555;
 }
 
-/* Style for the file item container */
+#selectAllFilesState {
+    width: 16px;
+    height: 16px;
+    margin-top: 2vh;
+}
+
 .file-item {
     display: flex;
     flex-direction: column;
@@ -127,18 +126,14 @@ body {
     cursor: pointer;
 }
 
-/* Style for the file icon */
 .file-icon {
     width: 64px;
-    /* Adjust the size as needed */
     height: 64px;
 }
 
-/* Style for the file name */
 .file-name {
     margin-top: 5px;
     text-align: center;
     word-break: break-word;
     max-width: 100px;
-    /* Adjust as needed */
 }
