@@ -15,7 +15,7 @@ function createWindow() {
   const centeredY = (height - windowHeight) / 2;
 
   mainWindow = new BrowserWindow({
-    width: 600,
+    width: 250,
     height: windowHeight,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
@@ -50,6 +50,7 @@ function createWindow() {
     await fs.promises.writeFile(tempFilePath, data);
     return tempFilePath;
   });
+  
 }
 
 app.whenReady().then(() => {

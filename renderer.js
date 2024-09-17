@@ -33,11 +33,21 @@ function handleDragStart(event, file) {
   }
 }
 
-function handleDragEnd(event, file) {
-  if (event.dataTransfer.dropEffect !== "none") {
-    fileList = fileList.filter((f) => f !== file);
-    updateFileListUI();
-  }
+function handleDragEnd(_, file) {
+  fileList = fileList.filter((f) => f !== file);
+  updateFileListUI();
+}
+
+function getFileIcon(fileType) {
+  const iconMappings = {
+    "image/png": "icons/png-icon.png",
+    "image/jpeg": "icons/jpeg-icon.png",
+    "application/pdf": "icons/pdf-icon.png",
+    "text/plain": "icons/text-icon.png",
+  };
+
+  const defaultIcon = "icons/default-file-icon.png";
+  return iconMappings[fileType] || defaultIcon;
 }
 
 function updateFileListUI() {
@@ -47,19 +57,36 @@ function updateFileListUI() {
     placeHolderImg.style.display = "none";
     fileListContainer.classList.add("show");
     fileList.forEach((file) => {
-      const li = document.createElement("li");
-      li.textContent = `File: ${file.name}, Size: ${file.size} bytes, Type: ${file.type}`;
-      li.draggable = true;
+      // Create a container for each file item
+      const fileItem = document.createElement("div");
+      fileItem.classList.add("file-item");
+      fileItem.draggable = true;
 
-      li.addEventListener("dragstart", (event) => {
+      // Create an image element for the file icon
+      const fileIcon = document.createElement("img");
+      fileIcon.classList.add("file-icon");
+      fileIcon.src = getFileIcon(file.type);
+
+      // Create a div for the file name
+      const fileName = document.createElement("div");
+      fileName.classList.add("file-name");
+      fileName.textContent = file.name;
+
+      // Append the icon and name to the file item container
+      fileItem.appendChild(fileIcon);
+      fileItem.appendChild(fileName);
+
+      // Add event listeners for drag-and-drop
+      fileItem.addEventListener("dragstart", (event) => {
         handleDragStart(event, file);
       });
 
-      li.addEventListener("dragend", (event) => {
+      fileItem.addEventListener("dragend", (event) => {
         handleDragEnd(event, file);
       });
 
-      filesListElement.appendChild(li);
+      // Append the file item to the list
+      filesListElement.appendChild(fileItem);
     });
   } else {
     placeHolderImg.style.display = "block";
