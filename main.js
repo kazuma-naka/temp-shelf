@@ -51,15 +51,15 @@ function createWindow() {
     return tempFilePath;
   });
 
-  ipcMain.on("start-drag", (event, files) => {
+  ipcMain.handle("drag-files", async (_, files) => {
     const filePaths = files.map((file) => file.path);
 
-    // Ensure all file paths are valid
     if (filePaths.every((filePath) => fs.existsSync(filePath))) {
       mainWindow.webContents.startDrag({
         files: filePaths,
-        icon: path.join(__dirname, "img", "drag-and-drop.png"), 
+        icon: path.join(__dirname, "img", "drag-and-drop.png"),
       });
+      return { success: true };
     } else {
       console.error("One or more files do not have a valid path.");
     }

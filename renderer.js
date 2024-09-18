@@ -1,5 +1,3 @@
-let fileList = [];
-
 const minimizeButton = document.getElementById("minimize");
 const closeButton = document.getElementById("close");
 const allFilesSelectCheckBox = document.getElementById("selectAllFilesState");
@@ -8,20 +6,21 @@ const filesListElement = document.getElementById("files");
 const fileListContainer = document.getElementById("file_list");
 const placeHolderImg = document.getElementById("place_holder_img");
 
-function handleListDragStart(event) {
+let fileList = [];
+
+async function handleListDragStart(event) {
   event.preventDefault();
-  if (window.electron && window.electron.startDrag) {
-    window.electron.startDrag(fileList);
+  if (window.electron && window.electron.dragFiles) {
+    try {
+      await window.electron.dragFiles(fileList);
+      fileList = [];
+      updateFileListUI();
+    } catch (error) {
+      console.error("Error dragging files:", error);
+    }
   } else {
     console.error("Electron API not found");
   }
-  fileList = [];
-  updateFileListUI();
-}
-
-function handleListDragEnd() {
-  fileList = [];
-  updateFileListUI();
 }
 
 function handleDragStart(event, file) {
@@ -74,26 +73,21 @@ function updateFileListUI() {
     placeHolderImg.style.display = "none";
     fileListContainer.classList.add("show");
     fileList.forEach((file) => {
-      // Create a container for each file item
       const fileItem = document.createElement("div");
       fileItem.classList.add("file-item");
       fileItem.draggable = true;
 
-      // Create an image element for the file icon
       const fileIcon = document.createElement("img");
       fileIcon.classList.add("file-icon");
       fileIcon.src = getFileIcon(file.type);
 
-      // Create a div for the file name
       const fileName = document.createElement("div");
       fileName.classList.add("file-name");
       fileName.textContent = file.name;
 
-      // Append the icon and name to the file item container
       fileItem.appendChild(fileIcon);
       fileItem.appendChild(fileName);
 
-      // Add event listeners for drag-and-drop
       fileItem.addEventListener("dragstart", (event) => {
         handleDragStart(event, file);
       });
@@ -102,7 +96,6 @@ function updateFileListUI() {
         handleDragEnd(event, file);
       });
 
-      // Append the file item to the list
       filesListElement.appendChild(fileItem);
     });
   } else {
@@ -146,7 +139,6 @@ allFilesSelectCheckBox.addEventListener("change", function () {
 dropZone.addEventListener("dragover", (event) => {
   event.stopPropagation();
   event.preventDefault();
-  console.log("Dragover event detected.");
 });
 
 dropZone.addEventListener("drop", (event) => {
