@@ -152,8 +152,8 @@ dropZone.addEventListener("drop", (event) => {
       (file) =>
         !fileList.some(
           (existingFile) =>
-            existingFile.name === file.name && existingFile.size === file.size
-        )
+            existingFile.name === file.name && existingFile.size === file.size,
+        ),
     );
     if (newFiles.length > 0) {
       fileList = [...fileList, ...newFiles];
