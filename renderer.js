@@ -1,3 +1,6 @@
+import iconMappings from "./IconMapping.js";
+import File from "./File.js";
+
 const minimizeButton = document.getElementById("minimize");
 const closeButton = document.getElementById("close");
 const allFilesSelectCheckBox = document.getElementById("selectAllFilesState");
@@ -54,16 +57,10 @@ function handleDragEnd(_, file) {
   updateFileListUI();
 }
 
-function getFileIcon(fileType) {
-  const iconMappings = {
-    "image/png": "icons/png-icon.png",
-    "image/jpeg": "icons/jpeg-icon.png",
-    "application/pdf": "icons/pdf-icon.png",
-    "text/plain": "icons/text-icon.png",
-  };
-
+function getFileIcon(file) {
+  console.log(`fileType: ${file.type} ${file.path}`);
   const defaultIcon = "icons/default-file-icon.png";
-  return iconMappings[fileType] || defaultIcon;
+  return iconMappings[file.type] || defaultIcon;
 }
 
 function updateFileListUI() {
@@ -79,7 +76,9 @@ function updateFileListUI() {
 
       const fileIcon = document.createElement("img");
       fileIcon.classList.add("file-icon");
-      fileIcon.src = getFileIcon(file.type);
+      fileIcon.src = File.isFile(file.path)
+        ? getFileIcon(file)
+        : "icons/open-folder.png";
 
       const fileName = document.createElement("div");
       fileName.classList.add("file-name");
