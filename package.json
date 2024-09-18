@@ -5,7 +5,11 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
   },
   "repository": {
     "type": "git",
@@ -23,8 +27,45 @@
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "electron": "^30.5.1",
+    "electron-builder": "^25.0.5",
     "eslint": "^9.10.0",
     "globals": "^15.9.0",
     "prettier": "3.3.3"
+  },
+  "build": {
+    "appId": "com.kazumaproject.tempshelf",
+    "productName": "temp-shelf",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "preload.js",
+      "main.js",
+      "dist/**/*",
+      "renderer.js",
+      "index.html",
+      "IconMapping.js",
+      "File.js",
+      "icons/",
+      "img/",
+      "style.css",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "img/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ]
+    }
   }
 }

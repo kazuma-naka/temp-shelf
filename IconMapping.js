@@ -2,6 +2,7 @@ const iconMappings = {
   "image/png": "icons/png-icon.png",
   "image/jpeg": "icons/jpeg-icon.png",
   "image/gif": "icons/gif-icon.png",
+  "image/webp": "icons/webp-icon.png",
   "image/svg+xml": "icons/svg-icon.png",
   "application/pdf": "icons/pdf-icon.png",
   "application/msword": "icons/word-icon.png",
