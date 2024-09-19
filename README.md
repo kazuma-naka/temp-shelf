@@ -3,6 +3,9 @@
 <h2 align="center">Temporarily Stores File</h2>
 
 <p align="center">
+<a href="https://www.npmjs.com/package/temp-shelf">
+    <img alt="Build/release" src="https://badgen.net/npm/v/temp-shelf">
+  </a>
 <a href="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml">
     <img alt="Build/release" src="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml/badge.svg">
   </a>
@@ -14,6 +17,7 @@
 
 ## Table of contents
 
+- [Intro](#temp-shelf)
 - [Installation](#Installation)
 - [Features](#Features)
 - [Quick Start](#Quick-Start)
@@ -46,21 +50,7 @@ npm install temp-shelf
 Start the app:
 
 ```bash
-npm run start
-```
-
-Build binary file:
-
-```bash
-npm run build
-```
-
-Specify platform:
-
-```bash
-npm run build:win
-npm run build:mac
-npm run build:linux
+npx temp-shelf
 ```
 
 ---
@@ -87,21 +77,7 @@ npm install temp-shelf
 アプリの起動:
 
 ```bash
-npm run start
-```
-
-バイナリファイルのビルド:
-
-```bash
-npm run build
-```
-
-プラットフォームの指定:
-
-```bash
-npm run build:win
-npm run build:mac
-npm run build:linux
+npx temp-shelf
 ```
 
 ---
