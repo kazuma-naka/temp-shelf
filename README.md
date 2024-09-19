@@ -28,6 +28,8 @@
 - [License](#license)
 - [Used Icons](#icons)
 
+![test gif](img/test.gif)
+
 # temp-shelf
 
 temp-shelf is a lightweight utility designed to temporarily store file paths, providing quick access and easy retrieval during drag-and-drop operations. It simplifies file handling without duplicating or managing clipboard history, making it ideal for quick file transfers across apps.
