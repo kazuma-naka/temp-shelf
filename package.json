@@ -1,6 +1,6 @@
 {
   "name": "temp-shelf",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
@@ -71,18 +71,6 @@
     "win": {
       "target": "nsis",
       "icon": "img/logo.ico"
-    },
-    "linux": {
-      "target": [
-        {
-          "target": "deb",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        }
-      ],
-      "icon": "img/icon.png"
     }
   }
 }
