@@ -1,6 +1,6 @@
 {
   "name": "temp-shelf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
@@ -57,6 +57,12 @@
       "style.css",
       "package.json"
     ],
+    "publish": {
+      "provider": "github",
+      "owner": "kazuma-naka",
+      "repo": "temp-shelf",
+      "releaseType": "release"
+    },
     "mac": {
       "category": "public.app-category.utilities",
       "target": "dmg",
