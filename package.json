@@ -56,18 +56,20 @@
     ],
     "mac": {
       "category": "public.app-category.utilities",
-      "target": "dmg"
+      "target": "dmg",
+      "icon": "img/logo.icns"
     },
     "win": {
       "target": "nsis",
-      "icon": "img/icon.png"
+      "icon": "img/logo.ico"
     },
     "linux": {
       "target": [
         "AppImage",
         "deb",
         "rpm"
-      ]
+      ],
+      "icon": "img/icon.png"
     }
   }
 }
