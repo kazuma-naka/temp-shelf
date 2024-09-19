@@ -1,11 +1,11 @@
 {
   "name": "temp-shelf",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
   "bin": {
-    "temp-shelf": "bin/execute.js"
+    "temp-shelf": "./bin/TempShelf.js"
   },
   "scripts": {
     "start": "electron .",
@@ -29,6 +29,10 @@
     "url": "https://github.com/kazuma-naka/temp-shelf/issues"
   },
   "homepage": "https://github.com/kazuma-naka/temp-shelf#readme",
+  "dependencies": {
+    "electron": "^32.1.1",
+    "electron-builder": "^25.0.5"
+  },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "eslint": "^9.10.0",
@@ -70,9 +74,5 @@
       "target": "nsis",
       "icon": "img/logo.ico"
     }
-  },
-  "dependencies": {
-    "electron": "^32.1.1",
-    "electron-builder": "^25.0.5"
   }
 }
