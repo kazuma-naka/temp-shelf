@@ -3,6 +3,9 @@
 <h2 align="center">Temporarily Stores File</h2>
 
 <p align="center">
+<a href="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml">
+    <img alt="Build/release" src="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml/badge.svg">
+  </a>
   <a href="https://github.com/prettier/prettier">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
   </a>
@@ -170,6 +173,3 @@ npm run build:linux
 <a href="https://www.flaticon.com/free-icons/logos" title="logos icons">Logos icons created by pocike - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/drag-and-drop" title="drag and drop icons">Drag and drop icons created by UIUX Mall - Flaticon</a>
-
-
-
