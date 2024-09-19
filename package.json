@@ -4,6 +4,9 @@
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
+  "bin": {
+    "temp-shelf": "bin/execute.js"
+  },
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
