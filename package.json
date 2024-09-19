@@ -1,11 +1,11 @@
 {
   "name": "temp-shelf",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
   "bin": {
-    "temp-shelf": "./TempShelf.js"
+    "temp-shelf": "bin/TempShelf.js"
   },
   "scripts": {
     "start": "electron .",
@@ -54,6 +54,7 @@
       "index.html",
       "IconMapping.js",
       "File.js",
+      "bin/",
       "icons/",
       "img/",
       "style.css",
