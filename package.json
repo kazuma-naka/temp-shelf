@@ -1,6 +1,6 @@
 {
   "name": "temp-shelf",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
@@ -23,7 +23,10 @@
   "keywords": [
     "file"
   ],
-  "author": "Kazuma Naka",
+  "author": {
+    "name": "Kazuma Naka",
+    "email": "kazuma.naka.01@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kazuma-naka/temp-shelf/issues"
@@ -72,6 +75,10 @@
     "win": {
       "target": "nsis",
       "icon": "img/logo.ico"
+    },
+    "linux": {
+      "target": "deb",
+      "icon": "img/icon.png"
     }
   }
 }

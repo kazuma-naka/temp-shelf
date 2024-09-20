@@ -151,3 +151,31 @@ npx temp-shelf
 <a href="https://www.flaticon.com/free-icons/logos" title="logos icons">Logos icons created by pocike - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/drag-and-drop" title="drag and drop icons">Drag and drop icons created by UIUX Mall - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/ico" title="ico icons">Ico icons created by The Chohans - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/icns" title="icns icons">Icns icons created by JunGSa - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/files-and-folders" title="files and folders icons">Files and folders icons created by Shahryar MInhas - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/deb" title="deb icons">Deb icons created by JunGSa - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/rpm-file" title="rpm file icons">Rpm file icons created by The Chohans - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/sh" title="sh icons">Sh icons created by The Chohans - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/csh" title="csh icons">Csh icons created by iconland_1 - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/csv-file" title="csv file icons">Csv file icons created by juicy_fish - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/file-extension" title="file extension icons">File extension icons created by bearicons - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/coding" title="coding icons">Coding icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/c-sharp" title="c sharp icons">C sharp icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/md" title="md icons">Md icons created by JunGSa - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">Javascript icons created by Smashicons - Flaticon</a>

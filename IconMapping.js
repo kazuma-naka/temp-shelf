@@ -4,6 +4,8 @@ const iconMappings = {
   "image/gif": "icons/gif-icon.png",
   "image/webp": "icons/webp-icon.png",
   "image/svg+xml": "icons/svg-icon.png",
+  "image/x-icon": "icons/ico-icon.png",
+  "image/icns": "icons/icns-icon.png",
   "application/pdf": "icons/pdf-icon.png",
   "application/msword": "icons/word-icon.png",
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
@@ -27,14 +29,29 @@ const iconMappings = {
   "application/x-bzip2": "icons/bzip2-icon.png",
   "application/x-gzip": "icons/gzip-icon.png",
   "application/vnd.oasis.opendocument.text": "icons/odt-icon.png",
-  "application/vnd.oasis.opendocument.spreadsheet": "icons/ods-icon.png", // .ods
-  "application/vnd.oasis.opendocument.presentation": "icons/odp-icon.png", // .odp
+  "application/vnd.oasis.opendocument.spreadsheet": "icons/ods-icon.png",
+  "application/vnd.oasis.opendocument.presentation": "icons/odp-icon.png",
   "audio/mpeg": "icons/mp3-icon.png",
   "audio/ogg": "icons/ogg-icon.png",
   "video/mp4": "icons/mp4-icon.png",
   "video/x-msvideo": "icons/avi-icon.png",
   "application/xml": "icons/xml-icon.png",
   "application/octet-stream": "icons/binary-icon.png",
+  "application/x-msdownload": "icons/exe-icon.png",
+  "application/x-apple-diskimage": "icons/dmg-icon.png",
+  "application/x-debian-package": "icons/deb-icon.png",
+  "application/x-rpm": "icons/rpm-icon.png",
+  "application/x-msi": "icons/msi-icon.png",
+  "application/x-sh": "icons/shell-icon.png",
+  "application/x-csh": "icons/shell-icon.png",
+  "application/x-executable": "icons/exe-icon.png",
+  "text/csv": "icons/csv-icon.png",
+  "application/x-java-archive": "icons/jar-icon.png",
+  "application/x-python": "icons/python-icon.png",
+  "application/x-c++": "icons/cpp-icon.png",
+  "application/x-csharp": "icons/csharp-icon.png",
+  "application/x-java-source": "icons/java-icon.png",
+  "text/markdown": "icons/md-icon.png",
 };
 
 export default iconMappings;
