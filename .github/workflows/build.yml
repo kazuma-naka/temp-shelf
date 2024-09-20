@@ -33,8 +33,16 @@ jobs:
         if: runner.os == 'Windows'
         run: dir dist\
 
-      - name: Upload Electron App Build
-        uses: actions/upload-artifact@v3
+      - name: Upload Windows Executable
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
         with:
-          name: electron-app-build
-          path: dist/**
+          name: electron-windows-exe
+          path: dist/*.exe
+
+      - name: Upload macOS Binary
+        if: runner.os != 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-macos-binary
+          path: dist/*.dmg
