@@ -32,3 +32,24 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release: true
+
+      - name: Upload Windows Executable
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-windows-exe
+          path: dist/*.exe
+
+      - name: Upload macOS Binary
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-macos-binary
+          path: dist/*.dmg
+
+      - name: Upload Ubuntu .deb File
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-ubuntu-deb
+          path: dist/*.deb
