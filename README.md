@@ -1,6 +1,6 @@
 ![temp-shelf Banner](img/banner.png)
 
-<h2 align="center">Temporarily Stores File</h2>
+<h2 align="center">Temporary File Storage</h2>
 
 <p align="center">
 <a href="https://www.npmjs.com/package/temp-shelf">
