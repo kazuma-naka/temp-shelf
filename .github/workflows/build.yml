@@ -1,6 +1,9 @@
 name: Build/release
 
-on: push
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   release:
@@ -14,17 +17,21 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js, NPM and Yarn
+      - name: Install Node.js, NPM, and Yarn
         uses: actions/setup-node@v3
         with:
           node-version: 20
+
+      - name: Extract tag name
+        id: extract_tag
+        run: echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
       - name: Build/release Electron app
         id: build_release
         uses: samuelmeuli/action-electron-builder@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+          release: true
 
       - name: Upload Windows Executable
         if: runner.os == 'Windows'
@@ -47,18 +54,8 @@ jobs:
           name: electron-ubuntu-deb
           path: dist/*.deb
 
-      - name: Create GitHub release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
       - name: Upload artifacts to GitHub Release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.build_release.outputs.upload_url }}
@@ -68,6 +65,3 @@ jobs:
             dist/*.deb
           asset_name: ${{ matrix.os }}-build.${{ matrix.os == 'Windows' && 'exe' || (matrix.os == 'macOS' && 'dmg') || 'deb' }}
           asset_content_type: application/octet-stream
-      
-        
-        
