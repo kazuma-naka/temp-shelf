@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - "v*"
+
 jobs:
   release:
     runs-on: ${{ matrix.os }}
@@ -40,7 +41,7 @@ jobs:
           release_name: Release ${{ env.tag_name }}
           draft: false
           prerelease: false
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Windows Executable
         if: runner.os == 'Windows'
