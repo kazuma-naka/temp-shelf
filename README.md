@@ -40,6 +40,8 @@ temp-shelf is a lightweight utility designed to temporarily store file paths, pr
 npm install temp-shelf
 ```
 
+or [Download binary files from here](https://github.com/kazuma-naka/temp-shelf/releases)
+
 ## Features
 
 - **Temporary File Storage**: Store file paths temporarily for quick access without duplicating files.
@@ -66,6 +68,8 @@ temp-shelf は、ファイルパスを一時的に保存し、ドラッグ＆ド
 ```bash
 npm install temp-shelf
 ```
+
+もしくは [ここからバイナリファイルをダウンロードする](https://github.com/kazuma-naka/temp-shelf/releases)
 
 ## 機能
 
