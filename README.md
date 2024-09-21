@@ -3,16 +3,20 @@
 <h2 align="center">Temporary File Storage</h2>
 
 <p align="center">
+<a href="https://github.com/kazuma-naka/temp-shelf/blob/main/LICENSE">
+<img alt="GitHub license" src="https://img.shields.io/badge/license-MIT-blue.svg">
+</a>
 <a href="https://www.npmjs.com/package/temp-shelf">
-    <img alt="Build/release" src="https://img.shields.io/npm/v/temp-shelf"/>
-  </a>
+<img alt="npm version" src="https://img.shields.io/npm/v/temp-shelf">
+</a>
 <a href="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml">
-    <img alt="Build/release" src="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml/badge.svg">
-  </a>
-  <a href="https://github.com/prettier/prettier">
-    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
-  </a>
-  <img alt="Electron.js" src="https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white">
+<img alt="Build/release" src="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml/badge.svg">
+</a>
+<a href="https://github.com/prettier/prettier">
+<img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+</a>
+<img alt="Electron.js" src="https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white">
+
 </p>
 
 ## Table of contents
