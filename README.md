@@ -4,7 +4,7 @@
 
 <p align="center">
 <a href="https://www.npmjs.com/package/temp-shelf">
-    <img alt="Build/release" src="https://badgen.net/npm/v/temp-shelf">
+    <img alt="Build/release" src="https://img.shields.io/npm/v/temp-shelf"/>
   </a>
 <a href="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml">
     <img alt="Build/release" src="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml/badge.svg">

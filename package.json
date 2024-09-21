@@ -1,6 +1,6 @@
 {
   "name": "temp-shelf",
-  "version": "1.3.9",
+  "version": "1.4.0",
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
@@ -50,7 +50,6 @@
     "files": [
       "preload.js",
       "main.js",
-      "dist/**/*",
       "renderer.js",
       "index.html",
       "IconMapping.js",
