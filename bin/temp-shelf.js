@@ -9,7 +9,7 @@ try {
     execSync("npm install temp-shelf", { stdio: "inherit" });
     console.log("temp-shelf installed successfully.");
   }
-  execSync("cd node_modules/temp-shelf/ && npm start", { stdio: "inherit" });
+  execSync("npm start --prefix node_modules/temp-shelf", { stdio: "inherit" });
   console.log("npm start executed successfully in temp-shelf");
 } catch (error) {
   console.error("Failed to execute npm start in temp-shelf:", error);
