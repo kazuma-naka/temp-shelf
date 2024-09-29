@@ -1,6 +1,6 @@
 {
   "name": "temp-shelf",
-  "version": "1.4.3",
+  "version": "1.4.5",
   "description": "File management with Drag-and-Drop functionality",
   "main": "main.js",
   "type": "module",
