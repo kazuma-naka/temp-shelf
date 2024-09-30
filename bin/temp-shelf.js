@@ -4,6 +4,11 @@ import { execSync } from "child_process";
 import { existsSync } from "fs";
 
 try {
+  if(!existsSync("package.json")){
+    console.log("package.json not found. run npm init");
+    execSync("npm init -y", { stdio: "inherit" });
+  }
+
   if (!existsSync("node_modules/temp-shelf")) {
     console.log("temp-shelf is not installed. Installing...");
     execSync("npm install temp-shelf", { stdio: "inherit" });
