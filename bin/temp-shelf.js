@@ -4,7 +4,7 @@ import { execSync } from "child_process";
 import { existsSync } from "fs";
 
 try {
-  if(!existsSync("package.json")){
+  if (!existsSync("package.json")) {
     console.log("package.json not found. run npm init");
     execSync("npm init -y", { stdio: "inherit" });
   }
