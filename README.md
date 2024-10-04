@@ -30,11 +30,9 @@
 
 - [Intro](#temp-shelf)
 - [Installation](#Installation)
-- [Features](#Features)
 - [Quick Start](#Quick-Start)
 - [紹介](#紹介)
 - [インストール](#インストール)
-- [機能](#機能)
 - [クイックスタート](#クイックスタート)
 - [License](#license)
 - [Used Icons](#icons)
@@ -42,8 +40,7 @@
 ![test gif](img/temp-shelf-demo.gif)
 
 # temp-shelf
-
-temp-shelf is a lightweight utility designed to temporarily store file paths, providing quick access and easy retrieval during drag-and-drop operations. It simplifies file handling without duplicating or managing clipboard history, making it ideal for quick file transfers across apps.
+Temp-shelf is an app that provides a temporary storage space when copying files. It’s a simple app where you just drag and drop the files you want to copy into the temp-shelf window.
 
 ## Installation
 
@@ -52,12 +49,6 @@ npm install temp-shelf
 ```
 
 or [Download binary files from here](https://github.com/kazuma-naka/temp-shelf/releases)
-
-## Features
-
-- **Temporary File Storage**: Store file paths temporarily for quick access without duplicating files.
-- **Drag-and-Drop Support**: Seamless drag-and-drop integration for file paths across your apps and OS.
-- **Electron-Powered**: Built with Electron, providing cross-platform support (Windows, macOS, Linux).
 
 ## Quick Start
 
@@ -80,12 +71,6 @@ npm install temp-shelf
 ```
 
 もしくは [ここからバイナリファイルをダウンロードする](https://github.com/kazuma-naka/temp-shelf/releases)
-
-## 機能
-
-- **一時的なファイル保存**: ファイルパスを一時的に保存し、簡単にアクセス可能にします。
-- **ドラッグ＆ドロップサポート**: OS やアプリ間でファイルパスのシームレスなドラッグ＆ドロップ操作をサポート。
-- **Electron ベース**: Electron で構築されており、Windows、macOS、Linux のクロスプラットフォームに対応。
 
 ## クイックスタート
 
