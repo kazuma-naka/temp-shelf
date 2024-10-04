@@ -61,7 +61,7 @@ or [Download binary files from here](https://github.com/kazuma-naka/temp-shelf/r
 Start the app:
 
 ```bash
-npx temp-shelf
+npx temp-shelf@latest
 ```
 
 ---
@@ -90,7 +90,7 @@ npm install temp-shelf
 アプリの起動:
 
 ```bash
-npx temp-shelf
+npx temp-shelf@latest
 ```
 
 ---
