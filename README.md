@@ -9,6 +9,9 @@
 <a href="https://www.npmjs.com/package/temp-shelf">
 <img alt="npm version" src="https://img.shields.io/npm/v/temp-shelf">
 </a>
+<a href="https://www.npmjs.com/package/temp-shelf">
+<img alt="npm downloads" src="https://img.shields.io/npm/dm/temp-shelf">
+</a>
 <a href="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml">
 <img alt="Build/release" src="https://github.com/kazuma-naka/temp-shelf/actions/workflows/build.yml/badge.svg">
 </a>
@@ -18,8 +21,9 @@
 <a href="https://github.com/prettier/prettier">
 <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
 </a>
+<a href="https://www.electronjs.org/">
 <img alt="Electron.js" src="https://img.shields.io/badge/Electron-191970?style=for-the-badge&logo=Electron&logoColor=white">
-
+</a>
 </p>
 
 ## Table of contents
@@ -35,7 +39,7 @@
 - [License](#license)
 - [Used Icons](#icons)
 
-![test gif](img/test.gif)
+![test gif](img/temp-shelf-demo.gif)
 
 # temp-shelf
 
@@ -53,7 +57,6 @@ or [Download binary files from here](https://github.com/kazuma-naka/temp-shelf/r
 
 - **Temporary File Storage**: Store file paths temporarily for quick access without duplicating files.
 - **Drag-and-Drop Support**: Seamless drag-and-drop integration for file paths across your apps and OS.
-- **Lightweight Design**: Focuses on efficient temporary file storage without managing clipboard or background tasks.
 - **Electron-Powered**: Built with Electron, providing cross-platform support (Windows, macOS, Linux).
 
 ## Quick Start
@@ -68,7 +71,7 @@ npx temp-shelf@latest
 
 # 紹介
 
-temp-shelf は、ファイルパスを一時的に保存し、ドラッグ＆ドロップ操作中に素早くアクセス・取得できる軽量なユーティリティです。ファイルの複製やクリップボード履歴の管理を行わないため、アプリ間の素早いファイル転送に最適です。
+temp-shelf は、ファイルをコピーする際に仮の置き場を提供するアプリです。コピーしたいファイルを temp-shelf のウィンドウ内にドラッグ＆ドロップするだけのシンプルなアプリです。
 
 ## インストール
 
@@ -80,9 +83,8 @@ npm install temp-shelf
 
 ## 機能
 
-- **一時的なファイル保存**: ファイルパスを一時的に保存し、簡単にアクセス可能にします。ファイルの複製は行いません。
+- **一時的なファイル保存**: ファイルパスを一時的に保存し、簡単にアクセス可能にします。
 - **ドラッグ＆ドロップサポート**: OS やアプリ間でファイルパスのシームレスなドラッグ＆ドロップ操作をサポート。
-- **軽量設計**: クリップボードやバックグラウンドタスクの管理を行わず、効率的に一時ファイルを保存。
 - **Electron ベース**: Electron で構築されており、Windows、macOS、Linux のクロスプラットフォームに対応。
 
 ## クイックスタート
